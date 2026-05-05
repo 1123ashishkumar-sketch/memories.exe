@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memories.exe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <!-- START SCREEN -->
+    <div id="start">
+        <h2>> Running Memories.exe...</h2>
+        <p>> Loading most important person...</p>
+        <button onclick="startApp()">Start</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game" class="hidden">
+        <h2>Relationship System Debugger 💻</h2>
+        <p id="log">ERROR: Missed visiting you today 😔</p>
+
+        <button onclick="fix(1)">Patch Bug</button>
+        <button onclick="fix(2)">Send Apology</button>
+        <button onclick="fix(3)">Deploy Love ❤️</button>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="gallery" class="hidden">
+        <h2>Memories ❤️</h2>
+
+        <div class="card">
+            <img src="images/her1.JPG">
+            <p>I love you my cutieeeee ❤️</p>
+        </div>
+
+        <div class="card">
+            <img src="images/her2.JPG">
+            <p>Your smile makes me forget everything that is eating me </p>
+        </div>
+
+        <div class="card">
+            <img src="images/us1.JPG">
+            <p>This day means a lot to me ❤️</p>
+        </div>
+
+        <div class="card">
+            <img src="images/us2.gif">
+            <p>I know i should’ve been there today… I’m really sorry my love </p>
+        </div>
+
+        <button onclick="finalScreen()">Continue</button>
+    </div>
+
+    <!-- FINAL -->
+    <div id="final" class="screen hidden">
+    <div class="card">
+        <h1>Hey… ❤️</h1>
+        <p>"Garima! I know this doesn’t replace actually being there today.
+            But you matter to me a lot bby ...i will make sure we enjoy our time together more than what we are missing today <br><br>
+            I’ll make it up to you properly. I promise."</p>
+        <button onclick="alert('I love you ❤️')">One more chance?</button>
+    </div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+</body>
+</html>
