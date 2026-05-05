@@ -2,88 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Memories.exe</title>
+<title>Memories.exe ❤️</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="app">
+<!-- START SCREEN -->
+<div id="start" class="screen">
+    <h2 id="introText"></h2>
+    <button onclick="startApp()">Start</button>
+</div>
 
-    <!-- START SCREEN -->
-    <div id="start">
-        <h2>> Running Memories.exe...</h2>
-        <p>> Loading most important person...</p>
-        <button onclick="startApp()">Start</button>
-    </div>
-
-    <!-- GAME SCREEN -->
-    <div id="game" class="hidden">
-        <h2>Relationship System Debugger 💻</h2>
-        <p id="log">ERROR: Missed visiting you today 😔</p>
-
-        <button onclick="fix(1)">Patch Bug</button>
-        <button onclick="fix(2)">Send Apology</button>
-        <button onclick="fix(3)">Deploy Love ❤️</button>
-    </div>
-
-    <!-- GALLERY -->
-    <div id="gallery" class="hidden">
-        <h2>Memories ❤️</h2>
-
-        <div class="card">
-            <img src="images/her1.JPG">
-            <p>I love you my cutieeeee ❤️</p>
-        </div>
-
-        <div class="card">
-            <img src="images/her2.JPG">
-            <p>Your smile makes me forget everything that is eating me </p>
-        </div>
-
-        <div class="card">
-            <img src="images/us1.JPG">
-            <p>This day means a lot to me ❤️</p>
-        </div>
-
-        <div class="card">
-            <img src="images/us2.gif">
-            <p>I know i should’ve been there today… I’m really sorry my love </p>
-        </div>
-
-        <button onclick="finalScreen()">Continue</button>
-    </div>
-
-    <!-- FINAL -->
-    <div id="final" class="screen hidden">
+<!-- GAME -->
+<div id="game" class="screen hidden">
     <div class="card">
-        <h1>Hey… ❤️</h1>
-        <p>"Garima! I know this doesn’t replace actually being there today.
-            But you matter to me a lot bby ...i will make sure we enjoy our time together more than what we are missing today <br><br>
-            I’ll make it up to you properly. I promise."</p>
-        <button onclick="alert('I love you ❤️')">One more chance?</button>
+        <h2>Fixing my mistake 💻</h2>
+        <p id="log">Error: I couldn’t come today…</p>
+
+        <button onclick="fix()">Patch Bug</button>
+        <button onclick="fix()">Send Apology</button>
+        <button onclick="fix()">Deploy Love ❤️</button>
     </div>
 </div>
 
+<!-- GALLERY -->
+<div id="gallery" class="screen hidden">
+    <h2>Memories ❤️</h2>
+
+    <div class="card">
+        <img src="images/her1.JPG">
+        <p>I love youuuu my cutieeeee ❤️</p>
+    </div>
+
+    <div class="card">
+    <img src="images/her2.JPG">
+    <p>Your Smile makes me forget everything that eats me ❤️</p>
+</div>
+
+    <div class="card">
+        <img src="images/us1.JPG">
+        <p>This day will forever be etched in my heart ❤️</p>
+    </div>
+<div class="card">
+    <img src="images/us2.gif">
+    <p>I know I should’ve been there today instead of apologizing. Sorry bby❤️ </p>
+</div>
+
+    <button onclick="finalScreen()">Continue</button>
+</div>
+
+<!-- FINAL -->
+<div id="final" class="screen hidden">
+    <div class="card">
+        <h1>I'm Sorry ❤️</h1>
+        <p>Garima! I know this doesn’t replace actually being there today.
+            But you matter to me a lot my love ...i will make sure we enjoy our time together more than what we are missing today <br><br>
+            I’ll make it up to you properly. I promise❤️</p>
+        <button onclick="alert('Thank you BIWI ji❤️, I LOVE YOU ❤️')">One more chance?</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
-<script>
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
 
+<!-- Floating Hearts -->
+<script>
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.bottom = "0";
+    heart.style.opacity = 0.7;
+    heart.style.fontSize = "18px";
+    heart.style.animation = "floatUp 5s linear";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}
-
-setInterval(createHeart, 300);
+    setTimeout(() => heart.remove(), 5000);
+}, 800);
 </script>
+
 </body>
 </html>
